@@ -1,0 +1,42 @@
+<div class="post">
+  <h2>{{post.title}}</h2>
+  <p>{{post.body}}</p>
+  <div class="meta">
+    <span>Posted by {{post.User.username}} on {{formatDate post.createdAt}}</span>
+    {{#if isEditable}}
+    <a href="/posts/edit/{{post.id}}">Edit</a>
+    <form action="/posts/delete/{{post.id}}" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+  </div>
+</div>
+
+{{#if comments.length}}
+  <h3>Comments:</h3>
+  {{#each comments}}
+    {{> comment}}
+  {{/each}}
+{{else}}
+  <p>No comments yet.</p>
+{{/if}}
+
+{{#if isAuthenticated}}
+  <h3>Add Comment</h3>
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
+  <form action="/comments/create/{{post.id}}" method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+      <label for="body">Body:</label>
+      <textarea id="body" name="body" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{{else}}
+  <p>You must <a href="/login">log in</a> to leave a comment.</p>
+{{/if}}

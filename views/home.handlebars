@@ -1,1 +1,21 @@
-PLaceholder
+{{#if isAuthenticated}}
+  <h2>Welcome back, {{user.username}}!</h2>
+{{else}}
+  <h2>Welcome to DevBlog!</h2>
+  <p>Log in or sign up to start blogging and commenting.</p>
+{{/if}}
+
+{{#if posts.length}}
+  {{#each posts}}
+    <div class="post">
+      <h3><a href="/posts/{{id}}">{{title}}</a></h3>
+      <p>{{excerpt body}}</p>
+      <div class="meta">
+        <span>Posted by {{User.username}} on {{formatDate createdAt}}</span>
+        <span>{{comments.length}} comments</span>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>No posts found.</p>
+{{/if}}

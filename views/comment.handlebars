@@ -1,0 +1,13 @@
+<div class="comment">
+  <h3>{{comment.title}}</h3>
+  <p>{{comment.body}}</p>
+  <div class="meta">
+    <span>Posted by {{comment.User.username}} on {{formatDate comment.createdAt}}</span>
+    {{#if isEditable}}
+    <a href="/comments/edit/{{comment.id}}">Edit</a>
+    <form action="/comments/delete/{{comment.id}}" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+  </div>
+</div>

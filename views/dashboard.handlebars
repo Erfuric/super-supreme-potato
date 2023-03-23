@@ -1,0 +1,13 @@
+<h2>Dashboard</h2>
+
+{{#if posts.length}}
+  <ul>
+    {{#each posts}}
+      <li><a href="/posts/{{id}}">{{title}}</a></li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No posts found.</p>
+{{/if}}
+
+<a href="/posts/create">Create New Post</a>

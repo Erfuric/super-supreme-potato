@@ -1,0 +1,17 @@
+<h2>Create Post</h2>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}
+
+<form action="/posts/create" method="POST">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+  </div>
+  <div>
+    <label for="body">Body:</label>
+    <textarea id="body" name="body" required></textarea>
+  </div>
+  <button type="submit">Create Post</button>
+</form>
