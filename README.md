@@ -6,6 +6,8 @@ A CMS-style blog site, where people can publish blogs and have other peoiple com
 
 This site uses MVC paradigm for its architectural structure, Handlebars.js as the templating language, Sequelize as the ORM, and the express-session for authentication.
 
+This will be deployed through Heroku at the following address https://super-supreme-potato.herokuapp.com/
+
 # Required packages
 
 [express-handlebars](https://www.npmjs.com/package/express-handlebars)
@@ -17,6 +19,7 @@ This site uses MVC paradigm for its architectural structure, Handlebars.js as th
 [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 # Video Demonstation
+
 
 
 # Credits
