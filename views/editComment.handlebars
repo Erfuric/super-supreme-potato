@@ -1,17 +1,17 @@
-<h2>Edit Comment</h2>
+<h2 class="text-xl font-bold">Edit Comment</h2>
 
 {{#if errorMessage}}
   <p class="error">{{errorMessage}}</p>
 {{/if}}
 
-<form action="/comments/edit/{{comment.id}}" method="POST">
-  <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" value="{{comment.title}}" required>
+<form class="mt-4" action="/comments/edit/{{comment.id}}" method="POST">
+  <div class="mb-4">
+    <label class="block font-semibold" for="title">Title:</label>
+    <input class="w-full p-2 border border-gray-400 rounded" type="text" id="title" name="title" value="{{comment.title}}" required>
   </div>
-  <div>
-    <label for="body">Body:</label>
-    <textarea id="body" name="body" required>{{comment.body}}</textarea>
+  <div class="mb-4">
+    <label class="block font-semibold" for="body">Body:</label>
+    <textarea class="w-full p-2 border border-gray-400 rounded" id="body" name="body" required>{{comment.body}}</textarea>
   </div>
-  <button type="submit">Save Changes</button>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Save Changes</button>
 </form>

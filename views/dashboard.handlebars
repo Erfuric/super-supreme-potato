@@ -1,13 +1,13 @@
-<h2>Dashboard</h2>
+<h2 class="text-2xl font-bold mb-4">Dashboard</h2>
 
 {{#if posts.length}}
-  <ul>
+  <ul class="list-disc list-inside">
     {{#each posts}}
-      <li><a href="/posts/{{id}}">{{title}}</a></li>
+      <li><a href="/posts/{{id}}" class="underline">{{title}}</a></li>
     {{/each}}
   </ul>
 {{else}}
   <p>No posts found.</p>
 {{/if}}
 
-<a href="/posts/create">Create New Post</a>
+<a href="/posts/create" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Create New Post</a>

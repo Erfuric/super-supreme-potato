@@ -34,5 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
+  console.log('Database synced');
   app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}`));
+  console.log(`Routes running on http://localhost:${PORT}`);
 });

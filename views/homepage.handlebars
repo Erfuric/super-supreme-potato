@@ -1,21 +1,21 @@
 {{#if isAuthenticated}}
-  <h2>Welcome back, {{user.username}}!</h2>
+  <h2 class="text-2xl font-bold mb-4">Welcome back, {{user.username}}!</h2>
 {{else}}
-  <h2>Welcome to DevBlog!</h2>
-  <p>Log in or sign up to start blogging and commenting.</p>
+  <h2 class="text-2xl font-bold mb-4">Welcome to DevBlog!</h2>
+  <p class="mb-8">Log in or sign up to start blogging and commenting.</p>
 {{/if}}
 
 {{#if posts.length}}
   {{#each posts}}
-    <div class="post">
-      <h3><a href="/posts/{{id}}">{{title}}</a></h3>
-      <p>{{excerpt body}}</p>
-      <div class="meta">
-        <span>Posted by {{User.username}} on {{format_date createdAt}}</span>
-        <span>{{comments.length}} comments</span>
+    <div class="border-b border-gray-300 py-4">
+      <h3 class="text-lg font-bold mb-2"><a href="/posts/{{id}}">{{title}}</a></h3>
+      <p class="text-gray-700">{{excerpt body}}</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-gray-600">Posted by {{User.username}} on {{format_date createdAt}}</span>
+        <span class="text-gray-600">{{comments.length}} comments</span>
       </div>
     </div>
   {{/each}}
 {{else}}
-  <p>No posts found.</p>
+  <p class="text-gray-700">No posts found.</p>
 {{/if}}

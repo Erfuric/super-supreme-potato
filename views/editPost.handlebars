@@ -1,17 +1,17 @@
-<h2>Edit Post</h2>
+<h2 class="text-2xl font-bold mb-4">Edit Post</h2>
 
 {{#if errorMessage}}
   <p class="error">{{errorMessage}}</p>
 {{/if}}
 
-<form action="/posts/edit/{{post.id}}" method="POST">
-  <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" value="{{post.title}}" required>
+<form class="flex flex-col space-y-4" action="/posts/edit/{{post.id}}" method="POST">
+  <div class="flex flex-col">
+    <label for="title" class="text-lg font-medium mb-2">Title:</label>
+    <input type="text" id="title" name="title" value="{{post.title}}" required class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
   </div>
-  <div>
-    <label for="body">Body:</label>
-    <textarea id="body" name="body" required>{{post.body}}</textarea>
+  <div class="flex flex-col">
+    <label for="body" class="text-lg font-medium mb-2">Body:</label>
+    <textarea id="body" name="body" required class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">{{post.body}}</textarea>
   </div>
-  <button type="submit">Save Changes</button>
+  <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">Save Changes</button>
 </form>

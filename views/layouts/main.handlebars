@@ -6,30 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/dark-mode.css">
 </head>
 
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
+<body class="bg-white dark:bg-gray-800">
+  <header class="bg-gray-800 dark:bg-gray-900">
+    <nav class="container mx-auto px-4 py-6 md:py-8">
+      <ul class="flex justify-between items-center text-white">
+        <li><a href="/" class="font-bold text-lg">Home</a></li>
         {{#if isAuthenticated}}
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li><a href="/dashboard" class="font-bold text-lg">Dashboard</a></li>
+        <li><a href="/logout" class="font-bold text-lg">Logout</a></li>
         {{else}}
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login" class="font-bold text-lg">Login</a></li>
+        <li><a href="/signup" class="font-bold text-lg">Sign Up</a></li>
         {{/if}}
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="container mx-auto py-8 px-4 md:py-12 md:px-8">
     {{{body}}}
   </main>
-  <footer>
-    <p>&copy; 2023 DevBlog</p>
+  <footer class="bg-gray-800 dark:bg-gray-900 py-4 md:py-6">
+    <p class="text-center text-white">&copy; 2023 DevBlog</p>
   </footer>
 </body>
 

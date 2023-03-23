@@ -3,6 +3,7 @@ const { User } = require('../models');
 
 router.get('/login', (req, res) => {
   try {
+    console.log('Render login page');
     res.render('login');
   } catch (err) {
     console.error(err);
@@ -12,6 +13,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
+    console.log('Received POST request to login');
     const user = await User.findOne({
       where: {
         username: req.body.username
@@ -19,6 +21,7 @@ router.post('/login', async (req, res) => {
     });
 
     if (!user) {
+      console.log('Invalid username or password');
       res.status(400).json({ message: 'Invalid username or password' });
       return;
     }
@@ -26,6 +29,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await user.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log('Invalid username or password');
       res.status(400).json({ message: 'Invalid username or password' });
       return;
     }
@@ -35,6 +39,7 @@ router.post('/login', async (req, res) => {
       req.session.username = user.username;
       req.session.logged_in = true;
 
+      console.log(`User ${user.username} logged in`);
       res.json(user);
     });
 
@@ -46,8 +51,10 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   try {
+    console.log('Received POST request to logout');
     if (req.session.logged_in) {
       req.session.destroy(() => {
+        console.log('User logged out');
         res.status(204).end();
       });
     } else {

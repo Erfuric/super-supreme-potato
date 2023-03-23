@@ -19,7 +19,7 @@ This will be deployed through Heroku at the following address https://super-supr
 [handlebars](https://www.npmjs.com/package/handlebars)
 [MySQL2](https://www.npmjs.com/package/mysql2)
 [Sequelize](https://www.npmjs.com/package/sequelize)
-
+[TailwindCSS](https://www.npmjs.com/package/tailwindcss)
 
 
 
