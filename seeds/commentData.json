@@ -1,0 +1,32 @@
+[
+    {
+      "content": "Great post!",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "content": "Thanks for sharing this!",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "content": "I agree with everything you've said here.",
+      "user_id": 1,
+      "post_id": 2
+    },
+    {
+      "content": "This post has been really helpful for me. Thanks!",
+      "user_id": 2,
+      "post_id": 2
+    },
+    {
+      "content": "I'm not sure I agree with your perspective on this issue.",
+      "user_id": 1,
+      "post_id": 3
+    },
+    {
+      "content": "Can you explain more about what you mean by that?",
+      "user_id": 2,
+      "post_id": 3
+    }
+  ]  
