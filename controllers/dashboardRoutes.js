@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    console.log('In the / route handler');
     const postData = await BlogPost.findAll({
       where: {
         user_id: req.session.user_id
@@ -26,7 +25,6 @@ router.get('/', withAuth, async (req, res) => {
     res.render('dashboard', { posts, logged_in: true });
 
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
