@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { BlogPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    console.log('In the / route handler');
+    const postData = await BlogPost.findAll({
       where: {
         user_id: req.session.user_id
       },
@@ -16,10 +17,16 @@ router.get('/', withAuth, async (req, res) => {
       ]
     });
 
+    if (!postData) {
+      res.status(404).json({ message: `No posts found` });
+      return;
+    }
+
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render('dashboard', { posts, logged_in: true });
 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -30,7 +37,7 @@ router.get('/new', withAuth, async (req, res) => {
 
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await BlogPost.findByPk(req.params.id);
 
     if (!postData) {
       res.status(404).json({ message: `No post found with id ${req.params.id}` });
