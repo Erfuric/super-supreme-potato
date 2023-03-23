@@ -19,4 +19,9 @@ router.stack.forEach((r) => {
   }
 });
 
+// Catch all redirect for unknown routes
+// router.get('*', (req, res) => {
+//   res.redirect('/');
+// });
+
 module.exports = router;
