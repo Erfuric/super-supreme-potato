@@ -1,21 +1,20 @@
 const Sequelize = require('sequelize');
-require('dotenv').config();
 
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  // For production environment (Heroku), use JawsDB connection
+  sequelize = new Sequelize(process.env.JAWSDB_URL, {
+    dialect: 'mysql',
+    logging: false
+  });
 } else {
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-      host: 'localhost',
-      dialect: 'mysql',
-      port: 3306
-    }
-  );
+  // For development environment, use local MySQL connection
+  sequelize = new Sequelize('devblog_db', 'root', 'password', {
+    host: 'localhost',
+    dialect: 'mysql',
+    logging: false
+  });
 }
 
 module.exports = sequelize;
