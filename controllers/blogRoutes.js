@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', { posts, logged_in: req.session.logged_in });
     
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -42,7 +43,9 @@ router.get('/post/:id', async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: `No post found with id ${req.params.id}` });
+      const err = { message: `No post found with id ${req.params.id}` };
+      console.log(err);
+      res.status(404).json(err);
       return;
     }
 
@@ -50,6 +53,7 @@ router.get('/post/:id', async (req, res) => {
     res.render('post', { post, logged_in: req.session.logged_in });
 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -65,6 +69,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', { user, logged_in: true });
 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -78,7 +83,9 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     const postData = await Post.findByPk(req.params.id);
 
     if (!postData) {
-      res.status(404).json({ message: `No post found with id ${req.params.id}` });
+      const err = { message: `No post found with id ${req.params.id}` };
+      console.log(err);
+      res.status(404).json(err);
       return;
     }
 
@@ -86,6 +93,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     res.render('editPost', { post, logged_in: true });
 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
