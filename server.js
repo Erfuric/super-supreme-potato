@@ -15,15 +15,15 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: process.env.SESSION_SECRET,
-  cookie: {
-    maxAge: 86400000, // 24 hours in milliseconds
-  },
+  secret: 'I hate sand',
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24,
+  },
 };
 
 if (app.get('env') === 'production') {
