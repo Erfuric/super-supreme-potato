@@ -10,13 +10,19 @@ This will be deployed through Heroku at the following address https://super-supr
 
 # Required packages
 
+[bcrypt package](https://www.npmjs.com/package/bcrypt)
+[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+[dotenv package](https://www.npmjs.com/package/dotenv)
+[express](https://www.npmjs.com/package/express)
 [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+[express-session](https://www.npmjs.com/package/express-session)
+[handlebars](https://www.npmjs.com/package/handlebars)
 [MySQL2](https://www.npmjs.com/package/mysql2)
 [Sequelize](https://www.npmjs.com/package/sequelize)
-[dotenv package](https://www.npmjs.com/package/dotenv)
-[bcrypt package](https://www.npmjs.com/package/bcrypt)
-[express-session](https://www.npmjs.com/package/express-session)
-[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+
+
+
+
 
 # Video Demonstation
 

@@ -1,27 +1,33 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "connect-session-sequelize": "^7.1.5",
-    "dotenv": "^16.0.3",
-    "express-handlebars": "^7.0.2",
-    "express-session": "^1.17.3",
-    "mysql2": "^3.2.0",
-    "sequelize": "^6.29.3"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
   "name": "super-supreme-potato",
   "description": "A CMS-style blog site, where people can publish blogs and have other peoiple comment on them.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "seed": "node seeds/seed.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Erfuric/super-supreme-potato.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Callum Mackintosh",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Erfuric/super-supreme-potato/issues"
   },
