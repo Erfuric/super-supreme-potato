@@ -8,12 +8,13 @@ This site uses MVC paradigm for its architectural structure, Handlebars.js as th
 
 # Required packages
 
-express
-express-session
-handlebars
-sequelize
-mysql2
-bcrypt
+[express-handlebars](https://www.npmjs.com/package/express-handlebars)
+[MySQL2](https://www.npmjs.com/package/mysql2)
+[Sequelize](https://www.npmjs.com/package/sequelize)
+[dotenv package](https://www.npmjs.com/package/dotenv)
+[bcrypt package](https://www.npmjs.com/package/bcrypt)
+[express-session](https://www.npmjs.com/package/express-session)
+[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 # Video Demonstation
 
