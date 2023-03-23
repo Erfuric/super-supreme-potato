@@ -21,13 +21,6 @@ This will be deployed through Heroku at the following address https://super-supr
 [Sequelize](https://www.npmjs.com/package/sequelize)
 [TailwindCSS](https://www.npmjs.com/package/tailwindcss)
 
-
-
-
-# Video Demonstation
-
-
-
 # Credits
 
 Sole creator using information obtained through class teachings.
