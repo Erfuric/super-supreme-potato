@@ -15,8 +15,9 @@ const seedDatabase = async () => {
   const posts = await Post.bulkCreate(
     postData.map((post) => {
       return {
-        ...post,
-        user_id: users[Math.floor(Math.random() * users.length)].id
+        title: post.title,
+        content: post.content,
+        user_id: post.user_id
       };
     })
   );
@@ -24,9 +25,9 @@ const seedDatabase = async () => {
   await Comment.bulkCreate(
     commentData.map((comment) => {
       return {
-        ...comment,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
-        post_id: posts[Math.floor(Math.random() * posts.length)].id
+        content: comment.content,
+        user_id: comment.user_id,
+        post_id: comment.post_id
       };
     })
   );

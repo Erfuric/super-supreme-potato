@@ -2,7 +2,7 @@
   <h2>{{post.title}}</h2>
   <p>{{post.body}}</p>
   <div class="meta">
-    <span>Posted by {{post.User.username}} on {{formatDate post.createdAt}}</span>
+    <span>Posted by {{post.User.username}} on {{format_date post.createdAt}}</span>
     {{#if isEditable}}
     <a href="/posts/edit/{{post.id}}">Edit</a>
     <form action="/posts/delete/{{post.id}}" method="POST">

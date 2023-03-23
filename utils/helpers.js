@@ -39,5 +39,12 @@ module.exports = {
     } else {
       return 'Less than a minute ago';
     }
+  },
+  excerpt: (str) => {
+    const MAX_LENGTH = 100;
+    if (str && str.length > MAX_LENGTH) {
+      return str.substring(0, MAX_LENGTH) + '...';
+    }
+    return str;
   }
 };
